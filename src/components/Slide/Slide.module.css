@@ -1,0 +1,39 @@
+.slide {
+    display: flex;
+    height: 100vh;
+    flex: 0 0 33.3333%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    animation: fadeIn 0.5s linear forwards;
+}
+
+.slide .container {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.slide h1 { margin: 5px; }
+.slide p { margin: 0; }
+
+.slide .imageContainer {
+    display: flex;
+    height: 40%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.slide img {
+    width: 55%;
+    height: auto;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

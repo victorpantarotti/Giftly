@@ -1,0 +1,19 @@
+.btn {
+    position: fixed;
+    font-size: 24px;
+    bottom: 50px;
+    z-index: 2;
+    animation: fadeIn 0.5s linear forwards;
+}
+
+.left { left: 50px; }
+.right { right: 50px; }
+
+.in { display: block; }
+
+.out { display: none; }
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

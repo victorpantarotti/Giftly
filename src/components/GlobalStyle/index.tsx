@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import preferences from '@/settings/preferences';
 
 import Sora from "./fonts/Sora.ttf";
 
@@ -13,21 +14,24 @@ const GlobalStyle = () => {
             font-style: normal;
         }
 
-        html, body { height: 100%; }
+        /* html, body { height: 100%; } */
         
-        body { font-family: "Sora"; }
+        body {
+            background-color: ${preferences.colors.primaryColor};
+            color: ${preferences.colors.textColor};
+            font-family: "Sora";
+        }
 
         /* custom scroll */
 
         ::-webkit-scrollbar { width: 7px; }
 
-        ::-webkit-scrollbar-track { background-color: black; }
+        ::-webkit-scrollbar-track { background-color: ${preferences.colors.textColor}; }
 
         ::-webkit-scrollbar-thumb {
-            background-color: #676767;
+            background-color: ${preferences.colors.secondaryColor};
             border-radius: 10px;
         }
-
     `;
 
     return <Styled />;

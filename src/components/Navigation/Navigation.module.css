@@ -6,6 +6,8 @@
     animation: fadeIn 0.5s linear forwards;
 }
 
+.btn:hover { cursor: pointer; }
+
 .left { left: 50px; }
 .right { right: 50px; }
 

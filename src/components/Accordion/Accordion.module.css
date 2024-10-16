@@ -1,0 +1,61 @@
+.accordion {
+    position: relative;
+    width: 60%;
+    user-select: none;
+    overflow: hidden;
+    background-color: white;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 12px -1px rgba(0, 0, 0, 0.75);
+}
+
+.accordion .title {
+    display: block;
+    color: #C20B0B;
+    text-align: center;
+    cursor: pointer;
+}
+
+.accordion .title::after {
+    position: absolute;
+    content: '+';
+    right: 0;
+    margin-right: 30px;
+}
+
+.accordion_wrapper .content { 
+    display: none;
+    max-width: 100%;
+    animation-name: showContent;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.accordion input[type="checkbox"] {
+    display: none;
+}
+
+.accordion input[type="checkbox"]:checked + .accordion_wrapper .content {
+    display: block;
+}
+
+@media screen and (max-width: 1270px) {
+    .accordion { width: 80%; }
+}
+
+@keyframes showContent {
+    from {
+        opacity: 0;
+        height: 0;
+        padding: 0;
+    }
+
+    to {
+        opacity: 1;
+        height: auto;
+        padding: 0 20px;
+    }
+}

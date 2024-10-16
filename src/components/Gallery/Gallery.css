@@ -1,0 +1,29 @@
+.gallery-container {
+   display: flex;
+   gap: 10px;
+   flex-direction: row;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+}
+
+.ant-image {
+    display: flex;
+    width: 200px;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.ant-image-img, .ant-image-mask { border-radius: 10px; }
+
+@media screen and (max-width: 715px) {
+    .ant-image { width: 150px; height: 250px; }
+}
+
+@media screen and (max-width: 420px) {
+    .ant-image { width: 100px; height: 200px; }
+}

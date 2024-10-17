@@ -1,15 +1,11 @@
-import { useGlobalContext } from "@/hooks/useGlobalContext";
+import finalPage from "@/settings/finalPage";
 
 import Container from "@/components/Container";
 import Accordion from "@/components/Accordion";
-
-import styles from "./Final.module.css";
-import finalPage from "@/settings/finalPage";
 import Gallery from "@/components/Gallery";
+import Navigation from "@/components/Navigation";
 
 function Final() {
-    const { changeSlide } = useGlobalContext();
-
     return (
         <Container>
             <>
@@ -23,24 +19,13 @@ function Final() {
                             return <Accordion title={el.accordion?.title!} text={el.accordion?.text!} key={i} />;
                         case "gallery":
                             return <Gallery title={el.gallery?.title} images={el.gallery?.images!} key={i} />
+                        case "navigationFinish":
+                            return <Navigation finish={el.navigationFinish} key={i} />;
                     }
                 })}
             </>
         </Container>
     );
-
-    // <a onClick={(e) => {
-    //     e.preventDefault();
-    //     changeSlide("prev");
-    // }}>
-    //     Go Back
-    // </a>
-    // <a onClick={(e) => {
-    //     e.preventDefault();
-    //     changeSlide("reset");
-    // }}>
-    //     Reset
-    // </a>
 }
 
 export default Final;

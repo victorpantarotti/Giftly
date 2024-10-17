@@ -3,18 +3,18 @@
     width: 60%;
     user-select: none;
     overflow: hidden;
-    background-color: white;
-    color: black;
+    background-color: var(--accordion-backgroundColor);
+    color: var(--accordion-textColor);
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 5px;
     border-radius: 5px;
-    box-shadow: 3px 3px 12px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 3px 12px -1px var(--accordion-boxShadow);
 }
 
 .accordion .title {
     display: block;
-    color: #C20B0B;
+    color: var(--accordion-titleColor);
     text-align: center;
     cursor: pointer;
 }
@@ -29,9 +29,8 @@
 .accordion_wrapper .content { 
     display: none;
     max-width: 100%;
-    animation-name: showContent;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
+    user-select: text;
+    animation: showContent 0.3s forwards;
 }
 
 .accordion input[type="checkbox"] {

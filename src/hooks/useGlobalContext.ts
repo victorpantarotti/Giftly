@@ -3,7 +3,7 @@ import { useContext } from "react";
 import slides from "@/settings/slides";
 
 export const useGlobalContext = () => {
-    const { slideIndex, setSlideIndex, finished, setFinished, canSkip, setCanSkip, isEnd, setIsEnd, currentSFX, setCurrentSFX } = useContext(GlobalContext);
+    const { slideIndex, setSlideIndex, finished, setFinished, canSkip, setCanSkip, isEnd, setIsEnd, currentSlide, setCurrentSlide } = useContext(GlobalContext);
     
     const changeSlide = (action: "next" | "prev" | "reset") => {
         switch (action) {
@@ -34,7 +34,7 @@ export const useGlobalContext = () => {
         setCanSkip,
         isEnd,
         setIsEnd,
-        currentSFX,
-        setCurrentSFX
+        currentSlide,
+        setCurrentSlide
     };
 };

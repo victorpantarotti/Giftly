@@ -21,6 +21,7 @@ Nullam vehicula lacus ac nibh vestibulum, non scelerisque tellus rhoncus. Donec 
     },
     {
         gallery: {
+            title: "Our Photos!",
             images: [
                 {
                     url: "gallery/boesijana.jpg",
@@ -47,6 +48,12 @@ Nullam vehicula lacus ac nibh vestibulum, non scelerisque tellus rhoncus. Donec 
                     alt: "Samuel Arkwright"
                 }
             ]
+        }
+    },
+    {
+        navigationFinish: {
+            goBackText: "Go back!",
+            resetText: "Reset!"
         }
     }
 ];

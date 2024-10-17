@@ -15,6 +15,23 @@
 
 .out { display: none; }
 
+.finish .btn {
+    display: inline-block;
+    position: inherit;
+    background-color: var(--navigationFinish-backgroundColor);
+    color: var(--navigationFinish-textColor);
+    font-size: 18px;
+    padding: 5px;
+    margin: 0 10px 20px 0;
+    border-radius: 5px;
+}
+
+.finish .btn span {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }

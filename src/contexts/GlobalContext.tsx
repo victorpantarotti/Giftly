@@ -1,4 +1,5 @@
 import React, { createContext, ReactElement, SetStateAction, useEffect, useState } from "react";
+import { SlideInterface } from "@/interfaces/SlideInterface";
 import utils from "@/utils";
 
 interface GlobalContextInterface {
@@ -9,7 +10,9 @@ interface GlobalContextInterface {
     finished: boolean,
     setFinished: React.Dispatch<SetStateAction<boolean>>,
     canSkip: boolean,
-    setCanSkip: React.Dispatch<SetStateAction<boolean>>
+    setCanSkip: React.Dispatch<SetStateAction<boolean>>,
+    currentSlide: SlideInterface,
+    setCurrentSlide: React.Dispatch<SetStateAction<SlideInterface>>
 }
 
 interface GlobalProviderProps {
@@ -44,9 +47,13 @@ export const GlobalProvider = ({ children }: GlobalProviderProps) => {
     const [isEnd, setIsEnd] = useState(false);
     const [finished, setFinished] = useState(getFinished);
     const [canSkip, setCanSkip] = useState(false);
+    const [currentSlide, setCurrentSlide] = useState<SlideInterface>({} as SlideInterface);
 
     useEffect(() => {
-        if (finished) return setIsEnd(true);
+        if (finished) {
+            setCanSkip(true);
+            return setIsEnd(true);
+        }
     }, []);
 
     useEffect(() => localStorage.setItem("slideIndex", `${slideIndex}`), [slideIndex]);
@@ -61,7 +68,9 @@ export const GlobalProvider = ({ children }: GlobalProviderProps) => {
             finished,
             setFinished,
             canSkip,
-            setCanSkip
+            setCanSkip,
+            currentSlide,
+            setCurrentSlide
         }}>
             {children}
         </GlobalContext.Provider>

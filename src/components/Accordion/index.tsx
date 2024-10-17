@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
-import ReactMarkdown from "react-markdown";
 
-import "./Accordion.css";
+import MarkdownContainer from "../MarkdownContainer";
+
 import styles from "./Accordion.module.css";
 
 export interface AccordionProps {
@@ -18,7 +18,7 @@ const Accordion = ({ title, text }: AccordionProps) => {
                     <h2 className={styles.title}>{title}</h2>
                 </label>
                 <div className={styles.content}>
-                    {typeof text === 'string' ? <div className="post-markdown-container"><ReactMarkdown>{text}</ReactMarkdown></div> : text}
+                    {typeof text === 'string' ? <MarkdownContainer text={text} /> : text}
                 </div>
             </div>
         </div>

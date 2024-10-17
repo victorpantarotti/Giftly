@@ -21,19 +21,39 @@
 
 .post-markdown-container ul > li {
     margin-bottom: 1rem;
-    list-style: disc;   
+    list-style: disc;
+    text-align: start;
+}
+
+.post-markdown-container ol > li {
+    text-align: start;
 }
 
 .post-markdown-container pre,
 .post-markdown-container blockquote {
+    background-color: #eaeaea;
+    text-align: start;
     margin-bottom: 1.5rem;
     padding: 1rem;
-    background-color: #eaeaea;
     border-radius: 5px;
 }
 
 .post-markdown-container pre {
     overflow-x: auto;
+}
+
+.post-markdown-container table {
+    border-collapse: collapse;
+}
+
+.post-markdown-container th,
+.post-markdown-container td {
+    padding: 6px 13px;
+    border: 1px solid black;
+}
+
+.post-markdown-container p {
+    line-height: 1.5;
 }
 
 @media (max-width: 1100px) {

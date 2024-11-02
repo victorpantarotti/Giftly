@@ -1,5 +1,5 @@
 import { FinalPageInterface } from "@/interfaces/FinalPageInterface";
-import SurpriseMD from "@/markdowns/Surprise.md";
+import LoremMD from "@/markdowns/Lorem.md";
 
 const finalPage: FinalPageInterface[] = [
     {
@@ -8,7 +8,7 @@ const finalPage: FinalPageInterface[] = [
     {
         accordion: {
             title: "Surprise!",
-            text: SurpriseMD
+            content: LoremMD
         }
     },
     {
@@ -40,6 +40,11 @@ const finalPage: FinalPageInterface[] = [
                     alt: "Samuel Arkwright"
                 }
             ]
+        }
+    },
+    {
+        textBox: {
+            content: LoremMD
         }
     },
     {

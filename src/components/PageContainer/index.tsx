@@ -1,11 +1,11 @@
 import { ReactElement } from "react";
-import styles from "./Container.module.css";
+import styles from "./PageContainer.module.css";
 
 interface ContainerProps {
     children: ReactElement
 }
 
-const Container = ({ children }: ContainerProps) => {
+const PageContainer = ({ children }: ContainerProps) => {
     return (
         <section className={styles.container}>
             {children}
@@ -13,4 +13,4 @@ const Container = ({ children }: ContainerProps) => {
     )
 };
 
-export default Container;
+export default PageContainer;

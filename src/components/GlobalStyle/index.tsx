@@ -18,13 +18,15 @@ const GlobalStyle = () => {
             --primaryColor: ${preferences.colors.primaryColor};
             --secondaryColor: ${preferences.colors.secondaryColor};
             --textColor: ${preferences.colors.textColor};
+            --boxBackgroundColor: ${preferences.colors.boxBackgroundColor};
+            --boxTextColor: ${preferences.colors.boxTextColor};
             --boxShadow: ${preferences.colors.boxShadow};
 
             --accordion-backgroundColor: ${
                 preferences.colors.accordion && 
                 preferences.colors.accordion.backgroundColor 
                     ? preferences.colors.accordion.backgroundColor
-                    : preferences.colors.secondaryColor
+                    : preferences.colors.boxBackgroundColor
             };
             --accordion-titleColor: ${
                 preferences.colors.accordion && 
@@ -36,7 +38,7 @@ const GlobalStyle = () => {
                 preferences.colors.accordion && 
                 preferences.colors.accordion.textColor 
                     ? preferences.colors.accordion.textColor
-                    : preferences.colors.textColor
+                    : preferences.colors.boxTextColor
             };
             --accordion-boxShadow: ${
                 preferences.colors.accordion && 
@@ -49,12 +51,12 @@ const GlobalStyle = () => {
                 preferences.colors.gallery && 
                 preferences.colors.gallery.backgroundColor 
                     ? preferences.colors.gallery.backgroundColor
-                    : preferences.colors.secondaryColor
+                    : preferences.colors.boxBackgroundColor
             };
-            --gallery-textColor: ${
+            --gallery-titleColor: ${
                 preferences.colors.gallery && 
-                preferences.colors.gallery.textColor 
-                    ? preferences.colors.gallery.textColor
+                preferences.colors.gallery.titleColor 
+                    ? preferences.colors.gallery.titleColor
                     : preferences.colors.primaryColor
             };
             --gallery-boxShadow: ${
@@ -64,11 +66,30 @@ const GlobalStyle = () => {
                     : preferences.colors.boxShadow
             };
 
+            --textBox-backgroundColor: ${
+                preferences.colors.textBox && 
+                preferences.colors.textBox.backgroundColor 
+                    ? preferences.colors.textBox.backgroundColor
+                    : preferences.colors.boxBackgroundColor
+            };
+            --textBox-textColor: ${
+                preferences.colors.textBox && 
+                preferences.colors.textBox.textColor 
+                    ? preferences.colors.textBox.textColor
+                    : preferences.colors.boxTextColor
+            };
+            --textBox-boxShadow: ${
+                preferences.colors.textBox && 
+                preferences.colors.textBox.boxShadow 
+                    ? preferences.colors.textBox.boxShadow
+                    : preferences.colors.boxShadow
+            };
+
             --navigationFinish-backgroundColor: ${
                 preferences.colors.navigationFinish && 
                 preferences.colors.navigationFinish.backgroundColor 
                     ? preferences.colors.navigationFinish.backgroundColor
-                    : preferences.colors.secondaryColor
+                    : preferences.colors.boxBackgroundColor
             };
             --navigationFinish-textColor: ${
                 preferences.colors.navigationFinish && 

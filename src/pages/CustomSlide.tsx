@@ -1,12 +1,12 @@
 import SlidesModel from "@/components/SlidesModel";
-import Container from "@/components/Container";
+import PageContainer from "@/components/PageContainer";
 
 function CustomSlide() {
     return (
         <SlidesModel>
-            <Container>
+            <PageContainer>
                 <p>Hello world! This is custom!</p>
-            </Container>
+            </PageContainer>
         </SlidesModel>
     )
 }

@@ -1,40 +1,25 @@
-import { GlobalContext } from "@/contexts/GlobalContext";
 import { useContext } from "react";
-import slides from "@/settings/slides";
+
+import { GlobalContext } from "@/contexts/GlobalContext";
 
 export const useGlobalContext = () => {
-    const { slideIndex, setSlideIndex, finished, setFinished, canSkip, setCanSkip, isEnd, setIsEnd, currentSlide, setCurrentSlide } = useContext(GlobalContext);
-    
-    const changeSlide = (action: "next" | "prev" | "reset") => {
+    const { loading, setLoading } = useContext(GlobalContext);
+
+    const showLoading = (action: "show" | "hide" | "reset") => {
         switch (action) {
-            case "next":
-                if (slideIndex + 1 > slides.length - 1) {
-                    setIsEnd(true);
-                    return setFinished(true);
-                }
-                return setSlideIndex(slideIndex + 1);
-            case "prev":
-                if (isEnd) return setIsEnd(false);
-                if (slideIndex - 1 < 0) return;
-                return setSlideIndex(slideIndex - 1);
+            case "show":
+                return setLoading({ active: true, hide: false });
+            case "hide":
+                return setLoading({ active: true, hide: true });
             case "reset":
-                setIsEnd(false);
-                setFinished(false);
-                return setSlideIndex(0);
+                return setLoading({ active: false, hide: false });
             default:
                 return;
         }
-    }
+    };
 
     return {
-        slideIndex,
-        changeSlide,
-        finished,
-        canSkip,
-        setCanSkip,
-        isEnd,
-        setIsEnd,
-        currentSlide,
-        setCurrentSlide
+        loading,
+        showLoading
     };
 };

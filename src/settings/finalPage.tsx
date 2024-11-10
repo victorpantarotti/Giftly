@@ -14,6 +14,7 @@ const finalPage: FinalPageInterface[] = [
     {
         gallery: {
             title: "Our Photos!",
+            accordion: false,
             images: [
                 {
                     url: "gallery/boesijana.jpg",

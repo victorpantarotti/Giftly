@@ -1,6 +1,9 @@
+import { useEffect } from "react";
 import { useGlobalContext } from "./hooks/useGlobalContext";
+import { useSlidesContext } from "./hooks/useSlidesContext";
 import { ConfigProvider } from "antd";
 
+import Loader from "./components/Loader";
 import Final from "./pages/Final";
 import Slides from "./pages/Slides";
 
@@ -25,19 +28,37 @@ const AntDTheme = {
 };
 
 function App() {
-  const { isEnd, slideIndex } = useGlobalContext();
+  const { showLoading } = useGlobalContext();
+  const { isEnd, slideIndex } = useSlidesContext();
   const currentSlide = slides[slideIndex as keyof object];
 
+  useEffect(() => showLoading("reset"), []);
+
+  useEffect(() => {
+    showLoading("show");
+
+    if (document.readyState === "complete") return showLoading("hide");
+
+    const handleWindowLoad = () => showLoading("hide");
+
+    window.addEventListener("load", handleWindowLoad);
+
+    return () => window.removeEventListener("load", handleWindowLoad);
+  }, []);
+
   return (
-    <ConfigProvider theme={AntDTheme}>
-      {
-        isEnd 
-        ? <Final /> 
-        : currentSlide.custom 
-          ? currentSlide.custom
-          : <Slides />
-      }
-    </ConfigProvider>
+    <>
+      <Loader />
+      <ConfigProvider theme={AntDTheme}>
+        {
+          isEnd 
+          ? <Final /> 
+          : currentSlide.custom 
+            ? currentSlide.custom
+            : <Slides />
+        }
+      </ConfigProvider>
+    </>
   );
 }
 

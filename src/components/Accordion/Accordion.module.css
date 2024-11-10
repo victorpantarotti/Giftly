@@ -19,11 +19,15 @@
     cursor: pointer;
 }
 
-.accordion .title::after {
+.accordion label .title::after {
     position: absolute;
     content: '+';
     right: 0;
     margin-right: 30px;
+}
+
+.accordion input[type="checkbox"]:checked + .accordion_wrapper label .title::after {
+    content: '-';
 }
 
 .accordion_wrapper .content { 

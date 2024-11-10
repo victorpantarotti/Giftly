@@ -1,4 +1,4 @@
-import { useGlobalContext } from "@/hooks/useGlobalContext";
+import { useSlidesContext } from "@/hooks/useSlidesContext";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { FaArrowRotateRight } from "react-icons/fa6";
 
@@ -16,7 +16,7 @@ export interface NavigationFinishProps {
 import styles from "./Navigation.module.css";
 
 const Navigation = ({ finish }: NavigationProps) => {
-    const { slideIndex, finished, changeSlide, canSkip } = useGlobalContext();
+    const { slideIndex, finished, changeSlide, canSkip } = useSlidesContext();
 
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, action: "next" | "prev" | "reset") => {
         e.preventDefault();

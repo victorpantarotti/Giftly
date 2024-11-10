@@ -24,7 +24,7 @@ function Final() {
                         case "accordion":
                             return <Accordion title={el.accordion?.title!} content={el.accordion?.content!} key={i} />;
                         case "gallery":
-                            return <Gallery title={el.gallery?.title} images={el.gallery?.images!} key={i} />;
+                            return <Gallery title={el.gallery?.title} accordion={el.gallery?.accordion ?? false} images={el.gallery?.images!} key={i} />;
                         case "textBox":
                             return <TextBox content={el.textBox?.content!} key={i} />;
                         case "navigationFinish":

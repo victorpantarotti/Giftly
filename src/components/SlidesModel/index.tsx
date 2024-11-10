@@ -1,5 +1,5 @@
 import { ReactElement, useEffect } from "react";
-import { useGlobalContext } from "@/hooks/useGlobalContext";
+import { useSlidesContext } from "@/hooks/useSlidesContext";
 import preferences from "@/settings/preferences";
 import slides from "@/settings/slides";
 import utils from "@/utils";
@@ -11,7 +11,7 @@ interface SlidesModelProps {
 }
 
 const SlidesModel = ({ children }: SlidesModelProps) => {
-    const { slideIndex, finished, setCanSkip, setCurrentSlide } = useGlobalContext();
+    const { slideIndex, finished, setCanSkip, setCurrentSlide } = useSlidesContext();
 
     useEffect(() => {
         if (!finished) {

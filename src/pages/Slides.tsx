@@ -1,10 +1,10 @@
-import { useGlobalContext } from "@/hooks/useGlobalContext";
+import { useSlidesContext } from "@/hooks/useSlidesContext";
 
 import SlidesModel from "@/components/SlidesModel";
 import Slide from "@/components/Slide";
 
 function Slides() {
-    const { currentSlide } = useGlobalContext();
+    const { currentSlide } = useSlidesContext();
 
     return (
         <SlidesModel>

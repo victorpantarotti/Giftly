@@ -1,11 +1,11 @@
-import { useGlobalContext } from "@/hooks/useGlobalContext";
+import { useSlidesContext } from "@/hooks/useSlidesContext";
 import { useEffect, useRef } from "react";
 import { SlideInterface } from "@/interfaces/SlideInterface";
 
 import styles from "./Slide.module.css";
 
 const Slide = (slide: SlideInterface) => {
-    const { slideIndex } = useGlobalContext();
+    const { slideIndex } = useSlidesContext();
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
     useEffect(() => {
